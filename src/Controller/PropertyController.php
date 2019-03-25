@@ -2,21 +2,21 @@
 
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 
 
 
-class PropertyController
+class PropertyController extends AbstractController
 {
     /**
      * @Route("/biens", name="property.index")
      * @return Response
-
      */
-    private $twig;
-   public function index(): Response
+   public function index()
    {
-        return new Response('Les biens');
+       return $this->render('property/index.html.twig');
+
    }
 }
